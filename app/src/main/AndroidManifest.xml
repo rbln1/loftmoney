@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".AddItemActivity"
+            android:label="@string/add_item_title"/>
+
     </application>
 
 </manifest>
