@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">LoftMoney</string>
+
+    <string name="add_item_title">Добавление элемента</string>
+    <string name="add_item_button_text">Добавить</string>
+    <string name="add_item_name_hint">Название…</string>
+    <string name="add_item_price_hint">Цена…</string>
+</resources>
