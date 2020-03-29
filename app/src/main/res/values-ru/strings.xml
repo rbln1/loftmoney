@@ -4,6 +4,10 @@
 
     <string name="add_item_title">Добавление элемента</string>
     <string name="add_item_button_text">Добавить</string>
-    <string name="add_item_name_hint">Название…</string>
-    <string name="add_item_price_hint">Цена…</string>
+    <string name="add_item_name_hint">Название</string>
+    <string name="add_item_price_hint">Цена</string>
+    <string name="charge_name_tools_text">Молоко</string>
+
+    <string name="incomes_title">Доходы</string>
+    <string name="expenses_title">Расходы</string>
 </resources>

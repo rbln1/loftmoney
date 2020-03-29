@@ -3,6 +3,11 @@
 
     <string name="add_item_title">Add Item</string>
     <string name="add_item_button_text">Add</string>
-    <string name="add_item_name_hint">Name…</string>
-    <string name="add_item_price_hint">Price…</string>
+    <string name="add_item_name_hint">Name</string>
+    <string name="add_item_price_hint">Price</string>
+    <string name="charge_name_tools_text">Milk</string>
+    <string name="charge_price_tools_text" translatable="false">70 ₽</string>
+
+    <string name="incomes_title">Incomes</string>
+    <string name="expenses_title">Expenses</string>
 </resources>
