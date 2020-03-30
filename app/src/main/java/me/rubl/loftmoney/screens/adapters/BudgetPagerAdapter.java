@@ -9,6 +9,8 @@ import me.rubl.loftmoney.screens.model.ItemModel;
 
 public class BudgetPagerAdapter extends FragmentPagerAdapter {
 
+
+
     public BudgetPagerAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -26,8 +28,10 @@ public class BudgetPagerAdapter extends FragmentPagerAdapter {
         }
     }
 
+    private static final int NUM_PAGES = 2;
+
     @Override
     public int getCount() {
-        return 2;
+        return NUM_PAGES;
     }
 }

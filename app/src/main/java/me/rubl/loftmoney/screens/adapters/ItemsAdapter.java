@@ -1,6 +1,6 @@
 package me.rubl.loftmoney.screens.adapters;
 
-import android.graphics.Color;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +18,7 @@ import me.rubl.loftmoney.screens.model.ItemModel;
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder> {
 
     private List<ItemModel> mDataList = new ArrayList<>();
+    private Context mContext;
 
     public void setNewData(List<ItemModel> newData) {
         mDataList.clear();
@@ -34,6 +35,8 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
     @Override
     public ItemsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
+        if (mContext == null) mContext = parent.getContext();
+
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item, parent, false);
 
         return new ItemsViewHolder(view);
@@ -41,7 +44,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ItemsViewHolder holder, int position) {
-        holder.bind(mDataList.get(position));
+        holder.bind(mDataList.get(position), mContext);
     }
 
     @Override
@@ -61,20 +64,18 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
             mValueTV = itemView.findViewById(R.id.txtItemValue);
         }
 
-        void bind(ItemModel itemModel) {
+        void bind(ItemModel itemModel, Context context) {
             mNameTV.setText(itemModel.getName());
             mValueTV.setText(itemModel.getValue().concat(" ₽"));
-
-            // TODO: get value text color from resources
 
             switch (itemModel.getType()) {
 
                 case EXPENSE:
-                    mValueTV.setTextColor(Color.parseColor("#4a90e2"));
+                    mValueTV.setTextColor(context.getResources().getColor(R.color.light_expenses_value_text_color));
                     break;
 
                 case INCOME:
-                    mValueTV.setTextColor(Color.parseColor("#7ed321"));
+                    mValueTV.setTextColor(context.getResources().getColor(R.color.light_incomes_value_text_color));
                     break;
 
                 default:break;

@@ -14,16 +14,16 @@
             android:id="@+id/et_add_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:textSize="24sp"
+            android:minHeight="@dimen/et_add_item_min_height"
+            android:textSize="@dimen/et_add_item_text_size"
             android:hint="@string/add_item_name_hint" />
 
         <EditText
             android:id="@+id/et_add_item_value"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:textSize="24sp"
+            android:minHeight="@dimen/et_add_item_min_height"
+            android:textSize="@dimen/et_add_item_text_size"
             android:inputType="numberDecimal"
             android:hint="@string/add_item_price_hint" />
 
@@ -36,11 +36,11 @@
         android:layout_gravity="bottom|center_horizontal"
         style="?android:attr/borderlessButtonStyle"
         android:drawableStart="@drawable/ic_done_black_24dp"
-        android:drawableTint="#7ed321"
+        android:drawableTint="@color/accept_color"
         android:fontFamily="sans-serif-medium"
         android:textStyle="normal"
         android:textSize="14sp"
-        android:textColor="#7ed321"
+        android:textColor="@color/accept_color"
         android:letterSpacing="0.04"
         android:textAllCaps="true"
         android:text="@string/add_item_button_text" />

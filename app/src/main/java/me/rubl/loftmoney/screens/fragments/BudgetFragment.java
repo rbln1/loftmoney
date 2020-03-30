@@ -27,11 +27,10 @@ import me.rubl.loftmoney.screens.model.ItemModel;
 
 public class BudgetFragment extends Fragment {
 
+    private static final int ADD_ITEM_REQUEST = 100;
+    public static final String KEY_BUDGET_TYPE = "budget_type";
+    private ItemModel.BudgetType mBudgetType;
     private ItemsAdapter mItemsAdapter = new ItemsAdapter();
-    public static final int ADD_ITEM_REQUEST = 100;
-
-    //TODO
-    public ItemModel.BudgetType BUDGET_TYPE = ItemModel.BudgetType.INCOME;
 
     private RecyclerView mRecyclerMain;
     private FloatingActionButton mFabMain;
@@ -41,7 +40,7 @@ public class BudgetFragment extends Fragment {
     public static BudgetFragment newInstance(ItemModel.BudgetType budgetType) {
         BudgetFragment instance = new BudgetFragment();
         Bundle args = new Bundle();
-        args.putSerializable("budget_type", budgetType);
+        args.putSerializable(KEY_BUDGET_TYPE, budgetType);
         instance.setArguments(args);
         return instance;
     }
@@ -49,7 +48,7 @@ public class BudgetFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BUDGET_TYPE = (ItemModel.BudgetType) getArguments().getSerializable("budget_type");
+        mBudgetType = (ItemModel.BudgetType) getArguments().getSerializable(KEY_BUDGET_TYPE);
     }
 
     @Nullable
@@ -61,11 +60,11 @@ public class BudgetFragment extends Fragment {
         mRecyclerMain = rootView.findViewById(R.id.recyclerMain);
         mRecyclerMain.setAdapter(mItemsAdapter);
 
-        mData = new ArrayList(Arrays.asList(
-                new ItemModel("Item #4", "1", BUDGET_TYPE),
-                new ItemModel("Item #3", "100", BUDGET_TYPE),
-                new ItemModel("Item #2", "500", BUDGET_TYPE),
-                new ItemModel("Item #1", "2000", BUDGET_TYPE)
+        mData = new ArrayList<ItemModel>(Arrays.asList(
+                new ItemModel("Item #4", "1", mBudgetType),
+                new ItemModel("Item #3", "100", mBudgetType),
+                new ItemModel("Item #2", "500", mBudgetType),
+                new ItemModel("Item #1", "2000", mBudgetType)
         ));
         mItemsAdapter.setNewData(mData);
 
@@ -79,7 +78,7 @@ public class BudgetFragment extends Fragment {
 
         mFabMain = rootView.findViewById(R.id.fabMain);
         mFabMain.setOnClickListener((view) -> {
-            startActivityForResult(new Intent(getActivity(), AddItemActivity.class).putExtra("budget_type", BUDGET_TYPE), ADD_ITEM_REQUEST);
+            startActivityForResult(new Intent(getActivity(), AddItemActivity.class).putExtra(KEY_BUDGET_TYPE, mBudgetType), ADD_ITEM_REQUEST);
         });
 
         return rootView;

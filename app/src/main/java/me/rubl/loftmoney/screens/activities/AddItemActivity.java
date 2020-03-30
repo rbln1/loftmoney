@@ -14,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import me.rubl.loftmoney.R;
+import me.rubl.loftmoney.screens.fragments.BudgetFragment;
 import me.rubl.loftmoney.screens.model.ItemModel;
 
 public class AddItemActivity extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class AddItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_item);
 
         if (getIntent() != null) {
-            mBudgetItemType = (ItemModel.BudgetType) getIntent().getSerializableExtra("budget_type");
+            mBudgetItemType = (ItemModel.BudgetType) getIntent().getSerializableExtra(BudgetFragment.KEY_BUDGET_TYPE);
         }
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -44,12 +45,11 @@ public class AddItemActivity extends AppCompatActivity {
         mValueET.addTextChangedListener(textWatcher);
 
         mAddBtn.setOnClickListener((view) -> {
-            String name = mNameET.getText().toString();
+            String name = mNameET.getText().toString().trim();
             String value = mValueET.getText().toString();
 
             if (TextUtils.isEmpty(name) && TextUtils.isEmpty(value)) return;
 
-            //TODO: set type inc/exp
             ItemModel model = new ItemModel(name, value, mBudgetItemType);
 
             Intent modelIntent = new Intent();
