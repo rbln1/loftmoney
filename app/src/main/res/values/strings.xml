@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">LoftMoney</string>
+    <string name="app_name" translatable="false">LoftMoney</string>
 
     <string name="add_item_title">Add Item</string>
     <string name="add_item_button_text">Add</string>
@@ -7,7 +7,11 @@
     <string name="add_item_price_hint">Price</string>
     <string name="charge_name_tools_text">Milk</string>
     <string name="charge_price_tools_text" translatable="false">70 ₽</string>
-
     <string name="incomes_title">Incomes</string>
     <string name="expenses_title">Expenses</string>
+    <string name="expenses_item_value" translatable="false">%s ₽</string>
+    <string name="item_successfully_added">Successfully added</string>
+    <string name="activity_main_toolbar_title">Budget accounting</string>
+    <string name="action_sign_in_short">Sign In</string>
+
 </resources>

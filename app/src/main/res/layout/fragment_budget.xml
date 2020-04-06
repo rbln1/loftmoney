@@ -3,21 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".screens.activities.MainActivity">
+    tools:context=".screens.screens.main.MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerMain"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout_main"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:listitem="@layout/item"/>
+        android:layout_height="wrap_content" >
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabMain"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:src="@drawable/ic_add_white_24dp"
-        android:layout_margin="16dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
 
 </FrameLayout>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LoftMoney</string>
-
     <string name="add_item_title">Добавление элемента</string>
     <string name="add_item_button_text">Добавить</string>
     <string name="add_item_name_hint">Название</string>
@@ -10,4 +8,7 @@
 
     <string name="incomes_title">Доходы</string>
     <string name="expenses_title">Расходы</string>
+    <string name="item_successfully_added">Успешно добавлено</string>
+    <string name="activity_main_toolbar_title">Учет бюджета</string>
+    <string name="action_sign_in_short">Войти</string>
 </resources>

@@ -1,4 +1,4 @@
-package me.rubl.loftmoney.screens.adapters;
+package me.rubl.loftmoney.screens.screens.main.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,21 +13,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.rubl.loftmoney.R;
-import me.rubl.loftmoney.screens.model.ItemModel;
+import me.rubl.loftmoney.screens.screens.main.model.ItemModel;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder> {
 
-    private List<ItemModel> mDataList = new ArrayList<>();
+    private List<ItemModel> mItemsList = new ArrayList<>();
     private Context mContext;
 
     public void setNewData(List<ItemModel> newData) {
-        mDataList.clear();
-        mDataList.addAll(newData);
+        mItemsList.clear();
+        mItemsList.addAll(newData);
         notifyDataSetChanged();
     }
 
     public void addDataToTop(ItemModel model) {
-        mDataList.add(0, model);
+        mItemsList.add(0, model);
         notifyItemInserted(0);
     }
 
@@ -44,12 +44,12 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
 
     @Override
     public void onBindViewHolder(@NonNull ItemsViewHolder holder, int position) {
-        holder.bind(mDataList.get(position), mContext);
+        holder.bind(mItemsList.get(position), mContext);
     }
 
     @Override
     public int getItemCount() {
-        return mDataList.size();
+        return mItemsList.size();
     }
 
     static class ItemsViewHolder extends RecyclerView.ViewHolder {
@@ -57,21 +57,21 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
         TextView mNameTV;
         TextView mValueTV;
 
-        public ItemsViewHolder(@NonNull View itemView) {
+        ItemsViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            mNameTV = itemView.findViewById(R.id.txtItemName);
-            mValueTV = itemView.findViewById(R.id.txtItemValue);
+            mNameTV = itemView.findViewById(R.id.txt_item_name);
+            mValueTV = itemView.findViewById(R.id.txt_item_price);
         }
 
         void bind(ItemModel itemModel, Context context) {
             mNameTV.setText(itemModel.getName());
-            mValueTV.setText(itemModel.getValue().concat(" ₽"));
+            mValueTV.setText(context.getResources().getString(R.string.expenses_item_value, itemModel.getValue()));
 
             switch (itemModel.getType()) {
 
                 case EXPENSE:
-                    mValueTV.setTextColor(context.getResources().getColor(R.color.light_expenses_value_text_color));
+                    mValueTV.setTextColor(context.getResources().getColor(R.color.light_expenses_price_text_color));
                     break;
 
                 case INCOME:

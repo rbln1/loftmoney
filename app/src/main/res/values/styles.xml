@@ -1,16 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="LightAddButton" parent="AppTheme" >
-        <item name="colorButtonNormal">#eaeaea</item>
-        <item name="colorAccent">#7ed321</item>
+    <style name="AddItemTheme" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorAccent">#dbdbdb</item>
+    </style>
+
+    <style name="ZeplinTextStyle" parent="TextAppearance.AppCompat" >
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/zeplin_text_style</item>
+        <item name="android:textColor">@color/blue_background_text_color</item>
+    </style>
+
+    <style name="LoftButton" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@drawable/loft_button_background</item>
     </style>
 
 </resources>
