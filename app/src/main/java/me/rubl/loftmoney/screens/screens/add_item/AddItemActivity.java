@@ -27,13 +27,13 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import me.rubl.loftmoney.R;
 import me.rubl.loftmoney.screens.screens.main.fragment.BudgetFragment;
-import me.rubl.loftmoney.screens.screens.main.model.ItemModel;
+import me.rubl.loftmoney.screens.screens.main.model.BudgetType;
 import me.rubl.loftmoney.screens.web.WebFactory;
 import me.rubl.loftmoney.screens.web.model.AuthResponse;
 
 public class AddItemActivity extends AppCompatActivity {
 
-    private ItemModel.BudgetType mBudgetItemType;
+    private BudgetType mBudgetItemType;
 
     private List<Disposable> mDisposableList = new ArrayList<>();
 
@@ -55,8 +55,8 @@ public class AddItemActivity extends AppCompatActivity {
         mAddBtn = findViewById(R.id.btn_add_item);
 
         if (getIntent() != null) {
-            mBudgetItemType = (ItemModel.BudgetType) getIntent().getSerializableExtra(BudgetFragment.KEY_BUDGET_TYPE);
-            mTextColor = mBudgetItemType == ItemModel.BudgetType.EXPENSE
+            mBudgetItemType = (BudgetType) getIntent().getSerializableExtra(BudgetFragment.KEY_BUDGET_TYPE);
+            mTextColor = mBudgetItemType == BudgetType.EXPENSE
                     ? getResources().getColor(R.color.light_expenses_price_text_color)
                     : getResources().getColor(R.color.light_incomes_value_text_color);
             mNameET.setTextColor(mTextColor);
@@ -64,8 +64,8 @@ public class AddItemActivity extends AppCompatActivity {
             mAddBtn.setTextColor(mTextColor);
         }
 
-        mNameET.addTextChangedListener(nameTextWatcher);
-        mPriceET.addTextChangedListener(priceTextWatcher);
+        mNameET.addTextChangedListener(validateTextWatcher);
+        mPriceET.addTextChangedListener(validateTextWatcher);
 
         mAddBtn.setOnClickListener((view) -> {
 
@@ -118,7 +118,7 @@ public class AddItemActivity extends AppCompatActivity {
         }
     }
 
-    TextWatcher nameTextWatcher = new TextWatcher() {
+    TextWatcher validateTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -131,25 +131,9 @@ public class AddItemActivity extends AppCompatActivity {
 
         @Override
         public void afterTextChanged(Editable s) {
-            mName = s.toString();
-            checkEditTextHasText();
-        }
-    };
+            mName = mNameET.getText().toString();
+            mPrice = mPriceET.getText().toString();
 
-    TextWatcher priceTextWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-            mPrice = s.toString();
             checkEditTextHasText();
         }
     };

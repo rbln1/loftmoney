@@ -13,12 +13,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.rubl.loftmoney.R;
+import me.rubl.loftmoney.screens.screens.main.interfaces.ItemsAdapterListener;
 import me.rubl.loftmoney.screens.screens.main.model.ItemModel;
 
 public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHolder> {
 
     private List<ItemModel> mItemsList = new ArrayList<>();
     private Context mContext;
+    private ItemsAdapterListener mListener;
 
     public void setNewData(List<ItemModel> newData) {
         mItemsList.clear();
@@ -29,6 +31,10 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
     public void addDataToTop(ItemModel model) {
         mItemsList.add(0, model);
         notifyItemInserted(0);
+    }
+
+    public void setListener(ItemsAdapterListener mListener) {
+        this.mListener = mListener;
     }
 
     @NonNull
@@ -45,6 +51,7 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
     @Override
     public void onBindViewHolder(@NonNull ItemsViewHolder holder, int position) {
         holder.bind(mItemsList.get(position), mContext);
+        holder.setListener(mListener, mItemsList.get(position), position );
     }
 
     @Override
@@ -54,12 +61,14 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
 
     static class ItemsViewHolder extends RecyclerView.ViewHolder {
 
+        View mItemView;
         TextView mNameTV;
         TextView mValueTV;
 
         ItemsViewHolder(@NonNull View itemView) {
             super(itemView);
 
+            mItemView = itemView;
             mNameTV = itemView.findViewById(R.id.txt_item_name);
             mValueTV = itemView.findViewById(R.id.txt_item_price);
         }
@@ -80,6 +89,18 @@ public class ItemsAdapter extends RecyclerView.Adapter<ItemsAdapter.ItemsViewHol
 
                 default:break;
             }
+        }
+
+        public void setListener(ItemsAdapterListener listener, final ItemModel itemModel, final int position) {
+
+            mItemView.setOnClickListener(v -> listener.onItemClick(itemModel, position));
+
+            mItemView.setOnLongClickListener(v -> {
+
+                listener.onItemLongClick(itemModel, position);
+
+                return false;
+            });
         }
     }
 

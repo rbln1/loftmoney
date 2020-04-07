@@ -27,23 +27,25 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import me.rubl.loftmoney.R;
 import me.rubl.loftmoney.screens.screens.main.adapter.ItemsAdapter;
+import me.rubl.loftmoney.screens.screens.main.interfaces.ItemsAdapterListener;
+import me.rubl.loftmoney.screens.screens.main.model.BudgetType;
 import me.rubl.loftmoney.screens.screens.main.model.ItemModel;
 import me.rubl.loftmoney.screens.web.WebFactory;
 import me.rubl.loftmoney.screens.web.model.AuthResponse;
 import me.rubl.loftmoney.screens.web.model.ItemRemote;
 
-public class BudgetFragment extends Fragment {
+public class BudgetFragment extends Fragment implements ItemsAdapterListener {
 
     public static final String KEY_BUDGET_TYPE = "budget_type";
 
-    private ItemModel.BudgetType mBudgetType;
+    private BudgetType mBudgetType;
     private List<Disposable> mDisposables = new ArrayList<>();
     private ItemsAdapter mItemsAdapter = new ItemsAdapter();
 
     private SwipeRefreshLayout mSwipeRefreshLayoutMain;
     private RecyclerView mRecyclerMain;
 
-    public static BudgetFragment newInstance(ItemModel.BudgetType budgetType) {
+    public static BudgetFragment newInstance(BudgetType budgetType) {
         BudgetFragment instance = new BudgetFragment();
         Bundle args = new Bundle();
         args.putSerializable(KEY_BUDGET_TYPE, budgetType);
@@ -56,7 +58,7 @@ public class BudgetFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         if (getArguments() != null) {
-            mBudgetType = (ItemModel.BudgetType) getArguments().getSerializable(KEY_BUDGET_TYPE);
+            mBudgetType = (BudgetType) getArguments().getSerializable(KEY_BUDGET_TYPE);
         }
     }
 
@@ -67,6 +69,7 @@ public class BudgetFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_budget, null);
 
         mRecyclerMain = rootView.findViewById(R.id.recycler_main);
+        mItemsAdapter.setListener(this);
         mRecyclerMain.setAdapter(mItemsAdapter);
 
         mRecyclerMain.setLayoutManager(new LinearLayoutManager(
@@ -78,17 +81,12 @@ public class BudgetFragment extends Fragment {
         mRecyclerMain.addItemDecoration(dividerItemDecoration);
 
         mSwipeRefreshLayoutMain = rootView.findViewById(R.id.swipe_refresh_layout_main);
-        mSwipeRefreshLayoutMain.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                loadItems();
-            }
-        });
+        mSwipeRefreshLayoutMain.setOnRefreshListener(() -> loadItems());
 
         return rootView;
     }
 
-    public ItemModel.BudgetType getBudgetType() {
+    public BudgetType getBudgetType() {
         return mBudgetType;
     }
 
@@ -154,4 +152,13 @@ public class BudgetFragment extends Fragment {
         });
     }
 
+    @Override
+    public void onItemClick(ItemModel item, int position) {
+
+    }
+
+    @Override
+    public void onItemLongClick(ItemModel item, int position) {
+
+    }
 }

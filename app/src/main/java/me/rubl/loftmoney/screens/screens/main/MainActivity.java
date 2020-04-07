@@ -2,6 +2,7 @@ package me.rubl.loftmoney.screens.screens.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ActionMode;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -46,5 +47,15 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(), AddItemActivity.class)
                     .putExtra(BudgetFragment.KEY_BUDGET_TYPE, activeFragment.getBudgetType()));
         });
+    }
+
+    @Override
+    public void onActionModeStarted(ActionMode mode) {
+        super.onActionModeStarted(mode);
+    }
+
+    @Override
+    public void onActionModeFinished(ActionMode mode) {
+        super.onActionModeFinished(mode);
     }
 }

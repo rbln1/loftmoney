@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import me.rubl.loftmoney.screens.screens.main.fragment.BudgetFragment;
+import me.rubl.loftmoney.screens.screens.main.model.BudgetType;
 import me.rubl.loftmoney.screens.screens.main.model.ItemModel;
 
 public class BudgetPagerAdapter extends FragmentPagerAdapter {
@@ -20,9 +21,9 @@ public class BudgetPagerAdapter extends FragmentPagerAdapter {
 
         switch (position) {
             case 0:
-                return BudgetFragment.newInstance(ItemModel.BudgetType.EXPENSE);
+                return BudgetFragment.newInstance(BudgetType.EXPENSE);
             case 1:
-                return BudgetFragment.newInstance(ItemModel.BudgetType.INCOME);
+                return BudgetFragment.newInstance(BudgetType.INCOME);
 
             default: return null;
         }
