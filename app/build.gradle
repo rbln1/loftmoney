@@ -25,14 +25,44 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    // Test
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     // RecyclerView
     def recyclerViewVersion = "1.1.0"
     implementation "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+
+    // SwipeRefreshLayout
+    def swipeRefreshLayoutVersion = "1.0.0"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swipeRefreshLayoutVersion"
+
+    // RxJava
+    def rxJavaVersion = '2.1.1'
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+
+    // Network
+
+    def okHttpVersion = "4.4.1"
+    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    implementation("com.squareup.okhttp3:logging-interceptor:$okHttpVersion")
+
+    def retrofitVersion = "2.8.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    def gsonVersion = "2.8.6"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+
+    def gsonConverterVersion = "2.5.0"
+    implementation "com.squareup.retrofit2:converter-gson:$gsonConverterVersion"
+
+    // Preferences
+    def preferenceVersion = "1.1.0"
+    implementation "androidx.preference:preference:$preferenceVersion"
 }

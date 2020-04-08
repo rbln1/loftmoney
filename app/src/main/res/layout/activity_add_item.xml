@@ -10,22 +10,36 @@
         android:layout_gravity="center"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/et_add_item_name"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="@dimen/et_add_item_min_height"
-            android:textSize="@dimen/et_add_item_text_size"
-            android:hint="@string/add_item_name_hint" />
+            android:layout_marginEnd="@dimen/add_item_et_end_margin"
+            android:hint="@string/add_item_name_hint" >
 
-        <EditText
-            android:id="@+id/et_add_item_value"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_add_item_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/et_add_item_min_height"
+                android:textSize="@dimen/et_add_item_text_size" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="@dimen/et_add_item_min_height"
-            android:textSize="@dimen/et_add_item_text_size"
-            android:inputType="numberDecimal"
-            android:hint="@string/add_item_price_hint" />
+            android:layout_marginEnd="@dimen/add_item_et_end_margin"
+            android:hint="@string/add_item_price_hint" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_add_item_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/et_add_item_min_height"
+                android:textSize="@dimen/et_add_item_text_size"
+                android:inputType="numberDecimal"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -34,15 +48,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
-        style="?android:attr/borderlessButtonStyle"
-        android:drawableStart="@drawable/ic_done_black_24dp"
-        android:drawableTint="@color/accept_color"
+        android:background="@null"
+        android:drawableStart="@drawable/action_done_selector"
         android:fontFamily="sans-serif-medium"
         android:textStyle="normal"
         android:textSize="14sp"
-        android:textColor="@color/accept_color"
         android:letterSpacing="0.04"
         android:textAllCaps="true"
+        android:enabled="false"
         android:text="@string/add_item_button_text" />
 
 </FrameLayout>

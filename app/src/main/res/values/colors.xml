@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#3574FA</color>
-    <color name="colorPrimaryDark">#2D54CC</color>
+    <color name="colorPrimaryDark">#326EEE</color>
     <color name="colorAccent">#FFC107</color>
     <color name="light_primary_text_color">#666664</color>
-
-    <color name="light_expenses_value_text_color">#4a90e2</color>
+    <color name="light_expenses_price_text_color">#4a90e2</color>
     <color name="light_incomes_value_text_color">#7ed321</color>
     <color name="divider_color">#efefef</color>
-    <color name="accept_color">#7ed321</color>
+    <color name="accept_color_enabled">#7ed321</color>
+    <color name="accept_color_disabled">#e3e3e3</color>
+    <color name="blue_background_text_color">#FFFFFF</color>
 
 </resources>

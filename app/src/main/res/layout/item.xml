@@ -16,7 +16,7 @@
         android:paddingBottom="29dp" >
 
         <TextView
-            android:id="@+id/txtItemName"
+            android:id="@+id/txt_item_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -27,7 +27,7 @@
             tools:text="@string/charge_name_tools_text" />
 
         <TextView
-            android:id="@+id/txtItemValue"
+            android:id="@+id/txt_item_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="96dp"
@@ -35,10 +35,9 @@
             android:textSize="@dimen/primary_text_size"
             android:fontFamily="sans-serif"
             android:textStyle="bold"
-            android:textColor="@color/light_expenses_value_text_color"
+            android:textColor="@color/light_expenses_price_text_color"
             android:gravity="end"
             tools:text="@string/charge_price_tools_text" />
-
 
     </LinearLayout>
 
