@@ -5,8 +5,8 @@
     android:background="@color/colorPrimary">
 
     <ImageView
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="@dimen/splash_icon_size"
+        android:layout_height="@dimen/splash_icon_size"
         android:src="@drawable/ic_diamond"
         android:layout_gravity="center" />
 

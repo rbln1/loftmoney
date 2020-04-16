@@ -1,21 +1,17 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/dark_grey_blue</item>
     </style>
 
     <style name="AddItemTheme" parent="Theme.AppCompat.Light.NoActionBar" >
         <item name="colorAccent">#dbdbdb</item>
-    </style>
-
-    <style name="ZeplinTextStyle" parent="TextAppearance.AppCompat" >
-        <item name="android:fontFamily">sans-serif-medium</item>
-        <item name="android:textSize">@dimen/zeplin_text_style</item>
-        <item name="android:textColor">@color/blue_background_text_color</item>
     </style>
 
     <style name="LoftButton" parent="TextAppearance.AppCompat.Button">
@@ -25,5 +21,45 @@
         <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:background">@drawable/loft_button_background</item>
     </style>
+
+    <!-- Zeplin Styles-->
+
+    <style name="ZeplinTextStyle" parent="TextAppearance.AppCompat" >
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/zeplin_text_style_size</item>
+        <item name="android:textColor">@color/white_two</item>
+    </style>
+
+    <style name="ZeplinItem" parent="TextAppearance.AppCompat" >
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/zeplin_item_text_size</item>
+        <item name="android:textColor">@color/medium_grey</item>
+    </style>
+
+    <style name="ZeplinPrice" parent="TextAppearance.AppCompat" >
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/zeplin_price_text_size</item>
+        <item name="android:textColor">@color/dark_sky_blue</item>
+    </style>
+
+    <style name="ZeplinTitleH1" parent="TextAppearance.AppCompat" >
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/zeplin_title_h1_text_size</item>
+        <item name="android:textColor">@color/white_two</item>
+    </style>
+
+    <style name="ZeplinTabHover" parent="TextAppearance.AppCompat" >
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/zeplin_tab_hover_text_size</item>
+        <item name="android:textColor">@color/white_two</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="ZeplinTab" parent="TextAppearance.AppCompat" >
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">@dimen/zeplin_item_text_size</item>
+        <item name="android:textColor">@color/perrywinkle_70</item>
+    </style>
+
 
 </resources>

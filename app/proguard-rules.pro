@@ -19,3 +19,8 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep class me.rubl.loftmoney.common.web.LoftApi {*;}
+-keep class me.rubl.loftmoney.common.web.model.AuthResponseModel {*;}
+-keep class me.rubl.loftmoney.common.web.model.BudgetItemResponseModel {*;}
+-keep class me.rubl.loftmoney.common.web.model.Status {*;}

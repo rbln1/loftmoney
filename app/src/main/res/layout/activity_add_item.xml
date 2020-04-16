@@ -8,35 +8,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical" >
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/add_item_et_end_margin"
-            android:hint="@string/add_item_name_hint" >
+            android:layout_marginEnd="@dimen/activity_add_item_et_end_margin"
+            android:hint="@string/activity_add_item_et_name_hint" >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_add_item_name"
+                android:id="@+id/activity_add_item_et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/et_add_item_min_height"
-                android:textSize="@dimen/et_add_item_text_size" />
+                android:minHeight="@dimen/activity_add_item_et_min_height"
+                android:textSize="@dimen/activity_add_item_et_text_size" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/add_item_et_end_margin"
-            android:hint="@string/add_item_price_hint" >
+            android:layout_marginEnd="@dimen/activity_add_item_et_end_margin"
+            android:hint="@string/activity_add_item_et_price_hint" >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_add_item_price"
+                android:id="@+id/activity_add_item_et_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="@dimen/et_add_item_min_height"
-                android:textSize="@dimen/et_add_item_text_size"
+                android:minHeight="@dimen/activity_add_item_et_min_height"
+                android:textSize="@dimen/activity_add_item_et_text_size"
                 android:inputType="numberDecimal"/>
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -44,18 +44,18 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btn_add_item"
+        android:id="@+id/activity_add_item_btn_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
         android:background="@null"
-        android:drawableStart="@drawable/action_done_selector"
+        android:drawableStart="@drawable/selector_add_income_button"
         android:fontFamily="sans-serif-medium"
         android:textStyle="normal"
         android:textSize="14sp"
         android:letterSpacing="0.04"
         android:textAllCaps="true"
         android:enabled="false"
-        android:text="@string/add_item_button_text" />
+        android:text="@string/activity_add_item_btn_text" />
 
 </FrameLayout>

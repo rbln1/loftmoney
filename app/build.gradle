@@ -11,12 +11,46 @@ android {
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
+
+    signingConfigs {
         release {
-            minifyEnabled false
+            storeFile file('release.keystore')
+            storePassword 'Aa123456'
+            keyAlias 'rubln1'
+            keyPassword 'Aa123456'
+        }
+    }
+
+    buildTypes {
+        debug {
+            resValue("string", "app_name", "loftmoney-debug")
+            versionNameSuffix = '-debug'
+        }
+
+        release {
+            signingConfig signingConfigs.release
+            resValue("string", "app_name", "LoftMoney")
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions 'target'
+
+    productFlavors {
+        mainColors {
+            resValue("color", "colorPrimary", "#3574fa")
+            resValue("color", "colorPrimaryDark", "#3574fa")
+            resValue("color", "colorAccent", "#FFC107")
+        }
+
+        anotherColors {
+            resValue("color", "colorPrimary", "#2e7d32")
+            resValue("color", "colorPrimaryDark", "#005005")
+            resValue("color", "colorAccent", "#bf360c")
+        }
+    }
+
     compileOptions {
         sourceCompatibility = 1.8
         targetCompatibility = 1.8
@@ -28,6 +62,7 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
 
     // Test
     testImplementation 'junit:junit:4.13'

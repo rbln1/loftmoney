@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="add_item_title">Добавление элемента</string>
-    <string name="add_item_button_text">Добавить</string>
-    <string name="add_item_name_hint">Название</string>
-    <string name="add_item_price_hint">Цена</string>
-    <string name="charge_name_tools_text">Молоко</string>
+    <string name="activity_add_item_title">Добавление элемента</string>
+    <string name="activity_add_item_btn_text">Добавить</string>
+    <string name="activity_add_item_et_name_hint">Название</string>
+    <string name="activity_add_item_et_price_hint">Цена</string>
+
+    <string name="activity_main_toolbar_title">Учет бюджета</string>
+
+    <string name="fragment_balance_available_money">Доступные финансы</string>
+
+    <string name="budget_items_not_found">Ни одной записи не найдено.\nДля создания записи необходимо нажать на кнопку справа внизу.</string>
+    <string name="budget_items_loading_error">При загрузке данных произошла ошибка.\nДля повторной загрузки потяните вниз.</string>
+
+    <string name="budget_item_tools_name_text">Молоко</string>
+
+    <string name="action_mode_selected_count">Выделено: %1$s</string>
+    <string name="action_mode_remove_alert_message">Вы действительно хотите удалить выбранные пункты?</string>
+
+    <string name="menu_action_mode_remove">Удалить</string>
 
     <string name="incomes_title">Доходы</string>
     <string name="expenses_title">Расходы</string>
-    <string name="item_successfully_added">Успешно добавлено</string>
-    <string name="activity_main_toolbar_title">Учет бюджета</string>
+    <string name="balance_title">Баланс</string>
+    <string name="successfully_added">Успешно добавлено</string>
     <string name="action_sign_in_short">Войти</string>
+
 </resources>

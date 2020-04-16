@@ -7,7 +7,7 @@
 
     <application
         android:allowBackup="true"
-        android:name=".screens.LoftApp"
+        android:name=".LoftApp"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
@@ -15,18 +15,18 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning" >
 
-        <activity android:name=".screens.screens.SplashActivity" >
+        <activity android:name=".screens.splash.SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".screens.screens.auth.AuthActivity" />
+        <activity android:name=".screens.auth.AuthActivity" />
 
-        <activity android:name=".screens.screens.main.MainActivity" />
+        <activity android:name=".screens.main.MainActivity" />
 
-        <activity android:name=".screens.screens.add_item.AddItemActivity"
+        <activity android:name=".screens.add.AddItemActivity"
             android:theme="@style/AddItemTheme"
             android:windowSoftInputMode="stateVisible|adjustResize" />
 

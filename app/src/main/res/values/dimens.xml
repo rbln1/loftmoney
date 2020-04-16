@@ -1,9 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="divider_height">1dp</dimen>
+
+    <!-- Common -->
+    <dimen name="divider_size">1dp</dimen>
     <dimen name="primary_text_size">20sp</dimen>
-    <dimen name="et_add_item_min_height">48dp</dimen>
-    <dimen name="et_add_item_text_size">24sp</dimen>
-    <dimen name="add_item_et_end_margin">104dp</dimen>
-    <dimen name="zeplin_text_style">36sp</dimen>
+    <dimen name="splash_icon_size">93dp</dimen>
+    <dimen name="progress_bar_circular_size">40dp</dimen>
+
+    <!-- Activity Add Item -->
+    <dimen name="activity_add_item_et_min_height">48dp</dimen>
+    <dimen name="activity_add_item_et_text_size">24sp</dimen>
+    <dimen name="activity_add_item_et_end_margin">104dp</dimen>
+
+    <!-- Fragment Balance -->
+    <dimen name="fragment_balance_diagram_size">176dp</dimen>
+
+    <!--Item Budget-->
+    <dimen name="item_budget_min_height">82dp</dimen>
+
+    <!-- Zeplin -->
+    <dimen name="zeplin_text_style_size">36sp</dimen>
+    <dimen name="zeplin_item_text_size">20sp</dimen>
+    <dimen name="zeplin_price_text_size">20sp</dimen>
+    <dimen name="zeplin_title_h1_text_size">20sp</dimen>
+    <dimen name="zeplin_tab_hover_text_size">14sp</dimen>
+    <dimen name="zeplin_tab_text_size">14sp</dimen>
+
 </resources>

@@ -1,17 +1,30 @@
 <resources>
-    <string name="app_name" translatable="false">LoftMoney</string>
+    <string name="activity_add_item_title">Add Item</string>
+    <string name="activity_add_item_btn_text">Add</string>
+    <string name="activity_add_item_et_name_hint">Name</string>
+    <string name="activity_add_item_et_price_hint">Price</string>
 
-    <string name="add_item_title">Add Item</string>
-    <string name="add_item_button_text">Add</string>
-    <string name="add_item_name_hint">Name</string>
-    <string name="add_item_price_hint">Price</string>
-    <string name="charge_name_tools_text">Milk</string>
-    <string name="charge_price_tools_text" translatable="false">70 ₽</string>
+    <string name="activity_main_toolbar_title">Budget accounting</string>
+
+    <string name="fragment_balance_available_money">Available finance</string>
+
+    <string name="budget_items_not_found">No records found.\nTo create a record, click on the button in the lower right.</string>
+    <string name="budget_items_loading_error">An error occurred while loading data.\nPull down for reload.</string>
+
+    <string name="budget_item_tools_name_text">Milk</string>
+
+    <string name="action_mode_selected_count">Selected: %1$s</string>
+    <string name="action_mode_remove_alert_message">Are you sure you want to delete the selected items?</string>
+
+    <string name="menu_action_mode_remove">Remove</string>
+
+
+    <string name="budget_item_tools_price_text" translatable="false">70 ₽</string>
     <string name="incomes_title">Incomes</string>
     <string name="expenses_title">Expenses</string>
-    <string name="expenses_item_value" translatable="false">%s ₽</string>
-    <string name="item_successfully_added">Successfully added</string>
-    <string name="activity_main_toolbar_title">Budget accounting</string>
+    <string name="balance_title">Balance</string>
+    <string name="budget_item_value" translatable="false">%s ₽</string>
+    <string name="successfully_added">Successfully added</string>
     <string name="action_sign_in_short">Sign In</string>
 
 </resources>
