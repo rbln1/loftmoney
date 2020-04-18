@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp" >
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,14 +14,22 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_add_item_et_start_margin"
             android:layout_marginEnd="@dimen/activity_add_item_et_end_margin"
-            android:hint="@string/activity_add_item_et_name_hint" >
+            android:hint="@string/activity_add_item_et_name_hint"
+            app:hintTextColor="@color/white"
+            app:boxStrokeColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/activity_add_item_et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="18dp"
                 android:minHeight="@dimen/activity_add_item_et_min_height"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal"
+                android:letterSpacing="0"
                 android:textSize="@dimen/activity_add_item_et_text_size" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -28,14 +37,23 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/activity_add_item_et_start_margin"
             android:layout_marginEnd="@dimen/activity_add_item_et_end_margin"
-            android:hint="@string/activity_add_item_et_price_hint" >
+            android:layout_marginTop="4dp"
+            android:hint="@string/activity_add_item_et_price_hint"
+            app:hintTextColor="@color/white"
+            app:boxStrokeColor="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/activity_add_item_et_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingTop="6dp"
+                android:paddingBottom="18dp"
                 android:minHeight="@dimen/activity_add_item_et_min_height"
+                android:fontFamily="sans-serif"
+                android:textStyle="normal"
+                android:letterSpacing="0"
                 android:textSize="@dimen/activity_add_item_et_text_size"
                 android:inputType="numberDecimal"/>
 
@@ -48,6 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="30dp"
         android:background="@null"
         android:drawableStart="@drawable/selector_add_income_button"
         android:fontFamily="sans-serif-medium"
